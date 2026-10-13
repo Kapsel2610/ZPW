@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous">
+        </script>
+    <script>
+        $(function(){
+
+            $("#guzik").on("click", function(){
+                $("#pusty").hide()
+            })
+
+            $("#klik").on("click", function(){
+                $("#dudu").show()
+            })
+
+            $("#clickc").on("click", function(){
+                $("#aa").toggle()
+            })
+
+            $("#paf").on("click", function(){
+                    $("#bb").slideUp()
+            })
+
+            $("#fap").on("click", function(){
+                $("#bb").slideDown()
+            })
+
+            $("#bum").on("click", function(){
+                $("#cc").slideToggle()
+            })
+        })
+    </script>
+</head>
+<body>
+    <p id="pusty">BLBLBLBLBLBLLBLB</p>
+    <button id="guzik">Klik</button>
+
+    <p id="dudu" hidden>DUDUDUDUDUD</p>
+    <button id="klik">Guzik</button>
+
+    <p id="aa">RJHFJHJJFRJROJFNVV</p>
+    <button id="clickc">Kliknij oki?</button>
+
+    <p id="bb">54352345</p>
+    <button id="paf">kliku</button>
+    <button id="fap">już nie kliku</button>
+
+    <p id="cc">wsdefrghjk</p>
+    <button id="bum">DAWAJ KLIKAJ TEN GUZIK JUŻ!!!</button>
+</body>
+</html>
