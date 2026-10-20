@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous">
+        </script>
+
+    <script>
+        $(function(){
+            $("#newsletter").change(function(){
+                if($(this).is(":checked")){
+                    $("#stan").text("Zapisano")
+                } else {
+                    $("#stan").text("wypisano")
+                }
+            })
+
+            $("#akc").change(function(){
+                if($(this).is(":checked")){
+                    $("#guzik").prop("disabled", false)
+                } else {
+                    $("#guzik").prop("disabled", true)
+                }
+            })
+
+            $("#tekst").on("input", function(){
+                $("#podglad").text($(this).val())
+            })
+
+
+            
+
+            $("#textt").on("input", function(){
+                let liczba = 100 - $(this).val().length
+                $("#licz").text(liczba)
+
+                if(liczba < 10){
+                    $("#licz").css("color", "red")
+                } else {
+                    $("#licz").css("color", "green")
+                }
+            })
+        })
+    </script>
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="newsletter"> Chcę newsletter
+    <p id="stan"></p>
+
+    <hr>
+
+    <input type="checkbox" id="akc"> Akceptuję
+    <button id="guzik" disabled>Zarejestruj</button>
+
+    <hr>
+
+    <input type="text" id="tekst">
+    <p>Podgląd: <span id="podglad"></span></p>
+
+    <hr>
+
+    <textarea id="textt"></textarea>
+    <p> Pozostało znaków: <span id="licz">100</span></p>
+</body>
+</html>
