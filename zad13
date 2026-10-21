@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous">
+        </script>
+
+    <script>
+        $(function(){
+            $("#spr").click(function(){
+                if($("#tekst").val().trim() === ""){
+                    $("#inf").text("To pole puste")
+                } else {
+                    $("#inf").text($("#tekst").val())
+                }
+            })
+
+            $("#wys").submit("input", function(){
+                let naz = $("#nazwisko").val().trim()
+                if(naz === ""){
+                    $("#cos").text("Podaj naziwsko").css("color", "red")
+                } else {
+                    $("#cos").text("Wysłano").css("color", "green")
+                }
+            })
+
+            $("#sprawdz").click(function(){
+                let wiek = $("#wiek").val();
+                if(isNaN(wiek)){
+                    $("#blad").text("wiek musi byc liczba")
+                } else {
+                    $("#blad").text("Masz " + wiek + " lat")
+                }
+            })
+
+            $("#zap").click(function(){
+                let occ = $("#ocena").val().trim()
+                if(isNaN(occ) || occ === ""){
+                    $("#idk").text("to nie liczba")
+                } else if(occ < 1 || occ > 6){
+                    $("#idk").text("Ocena musi byc z zakresu 1-6")
+                } else {
+                    $("#idk").text("Zapisano ocene " + occ)
+                }
+            })
+        })
+    </script>
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <input type="text" id="tekst">
+    <input type="button" id="spr" value="Check">
+    <p id="inf"></p>
+
+    <hr>
+
+    < <form id="formularz">
+        <input type="text" id="nazwisko">
+        <button type="submit" id="wys">Wyslij</button>
+        <p id="cos"></p>
+        </form>
+        <hr>
+
+        <input type="text" id="wiek">
+        <button id="sprawdz">Sprzawdz</button>
+        <p id="blad"></p>
+
+        <hr>
+
+        <input type="text" id="ocena">
+        <input type="button" id="zap" value="Zapisz">
+        <p id="idk"></p>
+</body>
+</html>
